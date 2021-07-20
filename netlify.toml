@@ -1,2 +1,18 @@
+#[build]
+#  functions = "functions"
+
+# 제품모드
 [build]
-  functions = "functions"
+  command = "npm run build"
+  functions = "functions" # 서버리스 함수가 작성된 디렉토리
+  publish = "dist"
+
+# 개발모드
+[dev]
+  framework="#custom" 
+  command = "npm run dev" # Command to start your dev server
+  targetPort = 8080 # The port for your application server, framework or site generator
+  port = 8888 # The port that the netlify dev will be accessible on
+  publish = "dist" # The path to your static content folder
+  autoLaunch = false # a Boolean value that determines if Netlify Dev launches the local server address in your browser
+  # to start an https server instead of an http one, configure a certificate and key files
